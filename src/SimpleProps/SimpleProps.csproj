@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyVersion>$([System.DateTime]::Now.ToString('1.yy.M.dHH'))</AssemblyVersion>
+    <FileVersion>$([System.DateTime]::Now.ToString('1.yy.M.dHH'))</FileVersion>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Version>$([System.DateTime]::Now.ToString('1.yy.M.dHH'))-beta-00</Version>
+    <Title>$(AssemblyName)</Title>
+    <Authors>Explorers of the Binary World / a32kita</Authors>
+    <Company>Explorers of the Binary World / a32kita</Company>
+    <Copyright>Copyright © Explorers of the Binary World / a32kita All Rights Reserved.</Copyright>
+    <RepositoryUrl>https://github.com/a32kita/SimpleProps</RepositoryUrl>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)'=='Debug'">
+    <Version>$([System.DateTime]::Now.ToString('1.yy.M.dHH'))-beta-$([System.DateTime]::Now.ToString('mmss'))$([System.Guid]::NewGuid.ToString().Replace("-", "").Substring(0, 5))</Version>
+  </PropertyGroup>
+
+</Project>
